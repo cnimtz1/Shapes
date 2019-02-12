@@ -29,13 +29,23 @@ public class Sphere extends Shape{
 	//Surface area override for sphere, SA=4*PI*r^2
 	@Override
 	public float surfaceArea() {
-		return 4*PI*radius*radius;
+		if (radius <= 0.0f) {//if a negative, set area to 0
+			return 0;
+		} else { 
+			return 4*PI*radius*radius;
+		}
+		
 	}
 	
 	//Volume override for sphere, V=(4/3)*PI*r^3
 	@Override
 	public float volume() {
-		return (float) (4.0 / 3.0)*(PI*(radius*radius*radius));
+		if (radius <= 0.0f) {//if a negative, set area to 0
+			return 0;
+		} else { 
+			return (float) (4.0 / 3.0)*(PI*(radius*radius*radius));
+		}
+		
 	}
 	
 	//render() for Sphere message box

@@ -48,13 +48,24 @@ public class Cuboid extends Shape {
 	//Surface area override for cuboid, SA=2lw+2lh+2hw
 	@Override
 	public float surfaceArea() {
-		return 2*(height*width) + 2*(width*depth) + 2*(height*depth);
+		if (height <= 0.0f || depth <= 0.0f || width <= 0.0f) {//if a negative, set area to 0
+			return 0;
+		} else { 
+			return 2*(height*width) + 2*(width*depth) + 2*(height*depth);
+		}
+		
 	}
 	
 	//Volume override for cuboid, V=d*w*h
 	@Override
 	public float volume() {
-		return depth*width*height;
+		if (height <= 0.0f || depth <= 0.0f || width <= 0.0f) {//if a negative, set area to 0
+			return 0;
+		} else { //Display values for message box
+			return depth*width*height;
+		}
+		
+		
 	}
 	
 	//render() for Cuboid message box

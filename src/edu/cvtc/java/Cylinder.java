@@ -40,13 +40,23 @@ public class Cylinder extends Shape {
 	//Surface area override for cylinder, SA=2(pi)rh + 2(pi)r^2
 	@Override
 	public float surfaceArea() {
-		return 2*PI*radius*height + 2*PI*radius*radius;
+		if (height <= 0.0f || radius <= 0.0f) {//if a negative, set area to 0
+			return 0;
+		} else { 
+			return 2*PI*radius*height + 2*PI*radius*radius;
+		}
+		
 	}
 	
 	//Volume override for cylinder, V=(pi)hr^2
 	@Override
 	public float volume() {
-		return PI*height*radius*radius;
+		if (height <= 0.0f || radius <= 0.0f) {//if a negative, set area to 0
+			return 0;
+		} else { 
+			return PI*height*radius*radius;
+		}
+		
 	}
 	
 	//render() for Cylinder message box
